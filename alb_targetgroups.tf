@@ -4,7 +4,7 @@ resource "aws_lb_target_group" "app_rjs_tg" {
   protocol                      = "HTTP"
   target_type                   = "ip"
   ip_address_type               = "ipv4"
-  vpc_id                        = data.aws_vpc.prod_vpc.id
+  vpc_id                        = data.aws_vpc.ecs_vpc.id
   load_balancing_algorithm_type = "round_robin"
 
   health_check {
@@ -25,7 +25,7 @@ resource "aws_lb_target_group" "app_njs_tg" {
   protocol                      = "HTTP"
   target_type                   = "ip"
   ip_address_type               = "ipv4"
-  vpc_id                        = data.aws_vpc.prod_vpc.id
+  vpc_id                        = data.aws_vpc.ecs_vpc.id
   load_balancing_algorithm_type = "round_robin"
 
   health_check {
